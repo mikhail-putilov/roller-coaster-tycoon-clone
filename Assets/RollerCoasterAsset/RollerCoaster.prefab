@@ -55,15 +55,15 @@ MonoBehaviour:
   resolutionY: 125
   plane: {fileID: 1000012558122050, guid: 36f4c2713dce51842a745c2a3d42ddd0, type: 2}
   rollerPath: {fileID: 1000012558122050, guid: 869f416e894b0cd4a96c20b91ad6e4ef, type: 2}
-  straightPath: {fileID: 1000014176330812, guid: a79166774b8f0ee4b8b7719360b03321,
+  straightPath: {fileID: 1000012209714584, guid: cf9a3559fc8f1444eaa15abb325f3394,
     type: 2}
-  leftTurn: {fileID: 1000012789595866, guid: 62f8950895c3ff942b1cef9556cd92fc, type: 2}
-  rightTurn: {fileID: 1000011276086922, guid: 3784aa0a92dd46d47a1aecc152f69671, type: 2}
-  toUpPath: {fileID: 1000010621735578, guid: ef126c6050f9bf7468d4131d65edd8c0, type: 2}
-  toDownPath: {fileID: 1000011667228738, guid: 93df7fc2cf8e3584ab4fd9e26317b3fe, type: 2}
-  stopUpPath: {fileID: 1000013623861528, guid: b874872b43fd30f49965b1b873f69ac2, type: 2}
-  stopDownPath: {fileID: 1000010969388940, guid: cafc8fa4216d4bc44bf68f88bc842d90,
+  leftTurn: {fileID: 1000012991412878, guid: 52152dab5f560ba408732c287f41b0ac, type: 2}
+  rightTurn: {fileID: 1000011293547054, guid: ef7d7866d93e24e4888353fea46ed60b, type: 2}
+  toUpPath: {fileID: 1000011431253916, guid: 507c0acf2600dad4aa82e930f9131629, type: 2}
+  toDownPath: {fileID: 1000011114700860, guid: c6c261e3cb412b440b4503f144b944fa, type: 2}
+  stopUpPath: {fileID: 1000013720303794, guid: 97bfdae453e2d104c8baff2e70fd0c90, type: 2}
+  stopDownPath: {fileID: 1000013186470988, guid: 09fbc8db29169d640b3c79b14931857a,
     type: 2}
-  upPath: {fileID: 1000013271904480, guid: bf2222bff170f5f44be27c470bb21e18, type: 2}
-  downPath: {fileID: 1000013034223382, guid: 44b33b8a3eb59bc4fa05f7fcac32139d, type: 2}
+  upPath: {fileID: 1000012619098494, guid: 2c2fd87e733ec80468a37746f45808e2, type: 2}
+  downPath: {fileID: 1000011606484662, guid: 7fe2e8ec08de4884abb080c333aef3da, type: 2}
   _tag: rc0

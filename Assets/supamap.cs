@@ -26,6 +26,7 @@ public class supamap : MonoBehaviour {
     public int gridSize = 10;
     public GameObject rollerCoaster;
 	public GameObject wcPrefab;
+	public GameObject foodPrefab;
 
 
 
@@ -92,11 +93,24 @@ public class supamap : MonoBehaviour {
 		empty.transform.position = new Vector3 (toAbsCoord(x + width/2), this.transform.position.y, toAbsCoord(z + height/2));
 		var _wc = (GameObject)Instantiate (wcPrefab, empty.transform);
 		empty.transform.localScale = new Vector3 (40, 40, 40);
-
-//		wc.transform.parent = 
-//		wc.transform.position = new Vector3 (222, this.transform.position.y, 222);
-		Debug.Log("swaped!");
 	}
+
+	public void placeFood(int dir, Rect zone) {
+		var x = zone.x;
+		var z = zone.y;
+		var height = zone.height;
+		var width = zone.width;
+		if (dir < 0) {
+			Swap<float>(ref x, ref z);
+			Swap<float>(ref width, ref height);
+			Debug.Log("swaped!");
+		}
+		var empty = new GameObject ("food empty");
+		empty.transform.position = new Vector3 (toAbsCoord(x + width/2), this.transform.position.y, toAbsCoord(z + height/2));
+		var _food = (GameObject) Instantiate (foodPrefab, empty.transform);
+		_food.transform.position = empty.transform.position;
+	}
+
 	public void placeRollerCoaster(int dir, float x, float z, float width, float height) {
 		if (dir < 0) {
 			Swap<float>(ref x, ref z);
@@ -261,7 +275,9 @@ public class supamap : MonoBehaviour {
 
     void DrawRect(Rect zone, Color col) {
 		if (col == wc) {
-			placeWc(dir, zone);
+			placeWc (dir, zone);
+		} else if (col == food) {
+			placeFood (dir, zone);
 		}
         for (int i = 0; i < zone.width; i++)
             for (int j = 0; j < zone.height; j++) {

@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000011130342810}
   - 114: {fileID: 114000013884632816}
   m_Layer: 0
-  m_Name: _roller
+  m_Name: RollerCoaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,3 +66,4 @@ MonoBehaviour:
     type: 2}
   upPath: {fileID: 1000013271904480, guid: bf2222bff170f5f44be27c470bb21e18, type: 2}
   downPath: {fileID: 1000013034223382, guid: 44b33b8a3eb59bc4fa05f7fcac32139d, type: 2}
+  _tag: rc0

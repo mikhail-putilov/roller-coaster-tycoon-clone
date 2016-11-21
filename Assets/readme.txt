@@ -1,0 +1,1 @@
+Included is a model of an outhouse in FBX format, a 1024 x 1024 PNG format texture and the PSD of the texture for customization. Enjoy!

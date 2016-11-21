@@ -60,6 +60,7 @@
      <Compile Include="Assets\RollerCoasterAsset\Scripts\GridController.cs" />
      <Compile Include="Assets\RollerCoasterAsset\Scripts\RollerCoasterPath.cs" />
      <Compile Include="Assets\supamap.cs" />
+     <None Include="Assets\readme.txt" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

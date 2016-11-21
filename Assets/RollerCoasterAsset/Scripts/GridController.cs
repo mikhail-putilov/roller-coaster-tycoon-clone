@@ -24,9 +24,9 @@ public class GridController : MonoBehaviour {
 	public string _tag;
     private GameObject[,] grid; //grid itself
 
-    void Awake() {
-        generate(resolutionX, resolutionY);
-    }
+//    void Awake() {
+//        generate(resolutionX, resolutionY);
+//    }
 
     public void generate(int _resolutionX, int _resolutionY) {
         clearArea();

@@ -21,7 +21,6 @@ public class supamap : MonoBehaviour {
     public Color wc;
     [Range(1, 2)]
     public int wcLimit = 2;
-	public static int globalRcCounter = 0;
 
     public bool drawGrid = true;
     public int gridSize = 10;
@@ -53,8 +52,31 @@ public class supamap : MonoBehaviour {
 	static float toAbsCoord(float _internal) {
 		return 300 - _internal / 5;
 	}
-    //placement of roller coaster using rollerCoaster game object prefab
-    public void placeRollerCoaster(int dir, float x, float z, float width, float height) {
+//    //placement of roller coaster using rollerCoaster game object prefab
+//    public void placeRollerCoaster(int dir, float x, float z, float width, float height) {
+//		if (dir < 0) {
+//			Swap<float>(ref x, ref z);
+//			Swap<float> (ref width, ref height);
+//			Debug.Log("swaped!");
+//		}
+//		GameObject cube = GameObject.CreatePrimitive (PrimitiveType.Cube);
+//		cube.transform.position = new Vector3 (toAbsCoord(x), this.transform.position.y, toAbsCoord(z));
+//		GameObject cube2 = GameObject.CreatePrimitive (PrimitiveType.Cube);
+//		cube2.transform.position = new Vector3 (toAbsCoord(x + width), this.transform.position.y, toAbsCoord(z + height));
+//		//попробуй поставить роллер костер в (0, 0, 0)
+//		GameObject _rollerCoaster = (GameObject)Instantiate(rollerCoaster);// roller coaster instantiation
+//        
+//		_rollerCoaster.transform.position = new Vector3(toAbsCoord(x+width),
+//			this.transform.position.y,
+//			toAbsCoord(z+height));
+////        _rollerCoaster.GetComponent<GridController>().generate((int)width, (int)height); //generating coaster at given zone
+//
+////        _rollerCoaster.transform.parent = this.transform;// ... and placement
+//
+////		_rollerCoaster.transform.lossyScale.Scale(new Vector3(0.15f, 0.15f, 0.15f));
+//
+//    }
+	public void placeRollerCoaster(int dir, float x, float z, float width, float height) {
 		if (dir < 0) {
 			Swap<float>(ref x, ref z);
 			Swap<float> (ref width, ref height);
@@ -64,29 +86,23 @@ public class supamap : MonoBehaviour {
 		cube.transform.position = new Vector3 (toAbsCoord(x), this.transform.position.y, toAbsCoord(z));
 		GameObject cube2 = GameObject.CreatePrimitive (PrimitiveType.Cube);
 		cube2.transform.position = new Vector3 (toAbsCoord(x + width), this.transform.position.y, toAbsCoord(z + height));
+
+
+
+
 		//попробуй поставить роллер костер в (0, 0, 0)
-//		var thePosition = transform.TransformPoint(new Vector3(toAbsCoord(x+width),
-//			this.transform.position.y,
-//			toAbsCoord(z+height)));
-//		var thePosition = transform.TransformPoint ();
-		var controller = rollerCoaster.GetComponent<GridController>();
-//		controller.tag = "rc" + globalRcCounter++;
-		controller.generate((int)width, (int)height); //generating coaster at given zone
-//		GameObject rc = (GameObject) Object.Instantiate(rollerCoaster, transform.TransformPoint(Vector3.zero), this.transform.rotation);
+		GameObject _rollerCoaster = (GameObject)Instantiate(rollerCoaster, Vector3.zero, this.transform.rotation);// roller coaster instantiation
+		_rollerCoaster.GetComponent<GridController>().generate(32, 32); //generating coaster at given zone
 
-		rollerCoaster.name = "_roller";
-//		GameObject _rollerCoaster = (GameObject)Instantiate(rollerCoaster);// roller coaster instantiation
-        
-//		_rollerCoaster.transform.position = new Vector3(toAbsCoord(x+width),
-//			this.transform.position.y,
-//			toAbsCoord(z+height));
-        
+		_rollerCoaster.transform.position = new Vector3(toAbsCoord(x+width),
+			this.transform.position.y,
+			toAbsCoord(z+height));
 
-//        _rollerCoaster.transform.parent = this.transform;// ... and placement
+		//        _rollerCoaster.transform.parent = this.transform;// ... and placement
 
-//		_rollerCoaster.transform.lossyScale.Scale(new Vector3(0.15f, 0.15f, 0.15f));
+		//		_rollerCoaster.transform.lossyScale.Scale(new Vector3(0.15f, 0.15f, 0.15f));
 
-    }
+	}
 
     public int dir;
     public void DrawMap() {
@@ -164,24 +180,24 @@ public class supamap : MonoBehaviour {
 
         if (randomizeAttr) //рисуем остальные зоны
             attractionSize = Random.Range(75, 125);
-//		if (cdir < 0) {
-//			DrawRect (new Rect (c.x - attractionSize / 2, c.y - attractionSize, attractionSize, attractionSize), attraction);
-//			this.placeRollerCoaster (dir, c.x - attractionSize / 2, c.y - attractionSize, attractionSize, attractionSize);
-//		} else {
-//			DrawRect (new Rect (c.x - attractionSize / 2, c.y, attractionSize, attractionSize), attraction);
-//			this.placeRollerCoaster (dir, c.x - attractionSize / 2, c.y, attractionSize, attractionSize);
-//		}
-//        if (randomizeAttr)
-//            attractionSize = Random.Range(75, 125);
-//
-//		if (ddir < 0) {
-//			DrawRect (new Rect (d.x - attractionSize / 2, d.y - attractionSize, attractionSize, attractionSize), attraction);
-//			this.placeRollerCoaster (dir, d.x - attractionSize / 2, d.y - attractionSize, attractionSize, attractionSize);
-//		} else {
-//			DrawRect (new Rect (d.x - attractionSize / 2, d.y, attractionSize, attractionSize), attraction);
-//			this.placeRollerCoaster (dir, d.x - attractionSize / 2, d.y, attractionSize, attractionSize);
-//
-//		}
+		if (cdir < 0) {
+			DrawRect (new Rect (c.x - attractionSize / 2, c.y - attractionSize, attractionSize, attractionSize), attraction);
+			this.placeRollerCoaster (dir, c.x - attractionSize / 2, c.y - attractionSize, attractionSize, attractionSize);
+		} else {
+			DrawRect (new Rect (c.x - attractionSize / 2, c.y, attractionSize, attractionSize), attraction);
+			this.placeRollerCoaster (dir, c.x - attractionSize / 2, c.y, attractionSize, attractionSize);
+		}
+        if (randomizeAttr)
+            attractionSize = Random.Range(75, 125);
+
+		if (ddir < 0) {
+			DrawRect (new Rect (d.x - attractionSize / 2, d.y - attractionSize, attractionSize, attractionSize), attraction);
+			this.placeRollerCoaster (dir, d.x - attractionSize / 2, d.y - attractionSize, attractionSize, attractionSize);
+		} else {
+			DrawRect (new Rect (d.x - attractionSize / 2, d.y, attractionSize, attractionSize), attraction);
+			this.placeRollerCoaster (dir, d.x - attractionSize / 2, d.y, attractionSize, attractionSize);
+
+		}
 
 
         //рисуем пути

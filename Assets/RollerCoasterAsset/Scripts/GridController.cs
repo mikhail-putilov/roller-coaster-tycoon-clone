@@ -21,7 +21,7 @@ public class GridController : MonoBehaviour {
     public GameObject stopDownPath;
     public GameObject upPath;
     public GameObject downPath;
-
+	public string _tag;
     private GameObject[,] grid; //grid itself
 
     void Awake() {
@@ -142,8 +142,9 @@ public class GridController : MonoBehaviour {
     }
 
     public void instantiate(int[] coordinate, string name, float height, int rotate) {
+		GameObject gridPlane = null;
         if (String.Compare(name, "s") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(straightPath);
+             gridPlane = (GameObject)Instantiate(straightPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -152,7 +153,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "u") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(upPath);
+             gridPlane = (GameObject)Instantiate(upPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -161,7 +162,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "d") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(downPath);
+             gridPlane = (GameObject)Instantiate(downPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -170,7 +171,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "td") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(toDownPath);
+             gridPlane = (GameObject)Instantiate(toDownPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -179,7 +180,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "tu") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(toUpPath);
+             gridPlane = (GameObject)Instantiate(toUpPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -188,7 +189,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "l") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(leftTurn);
+             gridPlane = (GameObject)Instantiate(leftTurn);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -197,7 +198,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "r") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(rightTurn);
+             gridPlane = (GameObject)Instantiate(rightTurn);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -206,7 +207,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "tsu") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(stopUpPath);
+             gridPlane = (GameObject)Instantiate(stopUpPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -215,7 +216,7 @@ public class GridController : MonoBehaviour {
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
         if (String.Compare(name, "tsd") == 0) {
-            GameObject gridPlane = (GameObject)Instantiate(stopDownPath);
+             gridPlane = (GameObject)Instantiate(stopDownPath);
             gridPlane.transform.parent = this.transform;
             gridPlane.transform.position = new Vector3(gridPlane.transform.position.x + coordinate[0],
                                                         gridPlane.transform.position.y + height,
@@ -223,6 +224,7 @@ public class GridController : MonoBehaviour {
             gridPlane.transform.Rotate(0, rotate, 0);
             grid[coordinate[0], coordinate[1]] = gridPlane;
         }
+		gridPlane.tag = _tag;
     }
 
     public bool isTurn(int[] cur, int[] next, int[] after) {

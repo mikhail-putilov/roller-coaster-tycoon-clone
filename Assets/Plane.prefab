@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000011859223356}
+  m_IsPrefabParent: 1
+--- !u!1 &1000011859223356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011258252232}
+  - 33: {fileID: 33000011841833980}
+  - 64: {fileID: 64000014162699982}
+  - 23: {fileID: 23000010464823464}
+  - 114: {fileID: 114000010605899002}
+  - 114: {fileID: 114000011105114606}
+  - 114: {fileID: 114000014111101050}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011258252232
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 250, y: 0.2, z: 250}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &23000010464823464
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: aca56e494a998d047b1979f85e3418b3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000011841833980
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &64000014162699982
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114000010605899002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c423205b7a0ba054db6bec7f25aac024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSize: 500
+  ySize: 500
+  splits: {r: 1, g: 1, b: 1, a: 1}
+  grass: {r: 0.2338884, g: 0.75735295, b: 0.3891227, a: 1}
+  footway: {r: 0.509, g: 0.33823532, b: 0.21885814, a: 1}
+  attraction: {r: 0.928, g: 0.298, b: 0.484, a: 1}
+  food: {r: 0.30882353, g: 0.5995943, b: 1, a: 1}
+  foodLimit: 3
+  wc: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 1}
+  wcLimit: 2
+  souvenir: {r: 0.5778906, g: 0.291, b: 0.875, a: 0.959}
+  souvenirLimit: 1
+  recursionBase: 7
+  offsetLimit: 5
+  drawFootWays: 1
+  drawSplits: 0
+  randomizeEachDir: 0
+  minZoneHeigth: 250
+  minZoneWidth: 250
+  minZoneSize: 10000
+  footwayWidth: 15
+  fillJitter: 13
+--- !u!114 &114000011105114606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803c45497ce75da45b3bc18132bbebcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSize: 500
+  ySize: 500
+  splits: {r: 1, g: 1, b: 1, a: 1}
+  grass: {r: 0, g: 0.5955882, b: 0.07804253, a: 1}
+  footway: {r: 0, g: 0, b: 0, a: 1}
+  attraction: {r: 0, g: 0.59607846, b: 0.078431375, a: 1}
+  food: {r: 0.8588236, g: 0.29803923, b: 0.29803923, a: 1}
+  foodLimit: 3
+  wc: {r: 0, g: 0.59607846, b: 0.078431375, a: 1}
+  wcLimit: 1
+  souvenir: {r: 0, g: 0.59607846, b: 0.078431375, a: 1}
+  souvenirLimit: 1
+  recursionBase: 3
+  offsetLimit: 8
+  drawZones: 0
+  drawGrid: 0
+  drawFootWays: 1
+  drawSplits: 1
+  randomizeEachDir: 0
+  gridSize: 50
+  minZoneHeigth: 300
+  minZoneWidth: 300
+  minZoneSize: 10000
+  footwayWidth: 15
+  fillJitter: 15
+--- !u!114 &114000014111101050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011859223356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90cec325987d35f45b99cde3b5f3d017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSize: 500
+  ySize: 500
+  grass: {r: 0.412846, g: 0.6764706, b: 0.412846, a: 1}
+  footway: {r: 0.512, g: 0.247, b: 0, a: 1}
+  attraction: {r: 1, g: 0, b: 0, a: 1}
+  attractionSize: 125
+  randomizeAttr: 0
+  food: {r: 0, g: 0.202789, b: 0.9485294, a: 1}
+  foodLimit: 1
+  wc: {r: 0.20588237, g: 0.20588237, b: 0.20588237, a: 1}
+  wcLimit: 1
+  drawGrid: 1
+  gridSize: 5
+  dir: 0

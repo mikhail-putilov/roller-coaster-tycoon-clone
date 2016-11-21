@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000011945460056}
+  m_IsPrefabParent: 1
+--- !u!1 &1000011945460056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011130342810}
+  - 114: {fileID: 114000013884632816}
+  m_Layer: 0
+  m_Name: RollerCoaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011130342810
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011945460056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000013884632816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011945460056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9dda34bca65fa54b96c76919c49a59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionX: 32
+  resolutionY: 32
+  plane: {fileID: 1000012558122050, guid: 36f4c2713dce51842a745c2a3d42ddd0, type: 2}
+  rollerPath: {fileID: 1000012558122050, guid: 869f416e894b0cd4a96c20b91ad6e4ef, type: 2}
+  straightPath: {fileID: 1000014176330812, guid: a79166774b8f0ee4b8b7719360b03321,
+    type: 2}
+  leftTurn: {fileID: 1000012789595866, guid: 62f8950895c3ff942b1cef9556cd92fc, type: 2}
+  rightTurn: {fileID: 1000011276086922, guid: 3784aa0a92dd46d47a1aecc152f69671, type: 2}
+  toUpPath: {fileID: 1000010621735578, guid: ef126c6050f9bf7468d4131d65edd8c0, type: 2}
+  toDownPath: {fileID: 1000011667228738, guid: 93df7fc2cf8e3584ab4fd9e26317b3fe, type: 2}
+  stopUpPath: {fileID: 1000013623861528, guid: b874872b43fd30f49965b1b873f69ac2, type: 2}
+  stopDownPath: {fileID: 1000010969388940, guid: cafc8fa4216d4bc44bf68f88bc842d90,
+    type: 2}
+  upPath: {fileID: 1000013271904480, guid: bf2222bff170f5f44be27c470bb21e18, type: 2}
+  downPath: {fileID: 1000013034223382, guid: 44b33b8a3eb59bc4fa05f7fcac32139d, type: 2}
